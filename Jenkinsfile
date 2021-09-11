@@ -1,6 +1,6 @@
 pipeline{
 agent{
-label "${params.NODE_LABEL} || node-2004"
+label "${params.NODE_LABEL}"
 } 
  parameters { 
  string(name: 'NODE_LABEL', defaultValue: 'node-2004', description: 'This is the node where the tests will be executed')
