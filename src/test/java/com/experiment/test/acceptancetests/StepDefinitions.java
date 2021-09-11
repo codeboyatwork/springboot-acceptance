@@ -12,7 +12,7 @@ import com.experiment.test.model.InputEntity;
 import com.experiment.test.model.OutputEntity;
 
 public class StepDefinitions {
-	private final String BASE_URL = "http://localhost:8080";
+	private final String BASE_URL = "http://localhost:8082";
 	Response response;
 	@When("I want to add {int} and {int}")
 	public void i_want_to_add_and(Integer int1, Integer int2) {
