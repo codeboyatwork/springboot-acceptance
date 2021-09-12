@@ -8,11 +8,29 @@ import io.restassured.specification.RequestSpecification;
 
 import static org.junit.Assert.*;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 import com.experiment.test.model.InputEntity;
 import com.experiment.test.model.OutputEntity;
 
 public class StepDefinitions {
-	private final String BASE_URL = "http://localhost:8082";
+	private String BASE_URL = "http://localhost:8082";
+	public StepDefinitions() throws IOException {
+		try {
+		java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("app.properties");
+		java.util.Properties properties = new Properties();
+		properties.load(inputStream);
+		BASE_URL = properties.getProperty("app.url");
+		}
+		catch(Exception e) {
+		FileInputStream inputStream =  new FileInputStream("src/test/resources/app.properties");
+		java.util.Properties properties = new Properties();
+		properties.load(inputStream);
+		BASE_URL = properties.getProperty("app.url");
+		}
+	}
 	Response response;
 	@When("I want to add {int} and {int}")
 	public void i_want_to_add_and(Integer int1, Integer int2) {

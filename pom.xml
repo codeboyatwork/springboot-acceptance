@@ -13,6 +13,7 @@
         <cucumber.version>6.10.4</cucumber.version>
         <junit.version>4.13.2</junit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <app.url>http://localhost:8081</app.url>
     </properties>
 
     <dependencies>
@@ -63,6 +64,22 @@
                     <target>11</target>
                 </configuration>
             </plugin>
+            <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>properties-maven-plugin</artifactId>
+            <version>1.0.0</version>
+            <executions>
+                <execution>
+                    <phase>generate-resources</phase>
+                    <goals>
+                        <goal>write-project-properties</goal>
+                    </goals>
+                    <configuration>
+                        <outputFile>${project.build.testOutputDirectory}/app.properties</outputFile>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
         </plugins>
     </build>
 </project>
