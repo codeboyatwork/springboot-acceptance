@@ -5,7 +5,7 @@ label "${params.NODE_LABEL}"
  parameters { 
  string(name: 'NODE_LABEL', defaultValue: 'node-2004', description: 'This is the node where the tests will be executed')
  string(name: 'IMAGE_NAME', defaultValue: 'sbexample:latest', description: 'This is the name of the docker image on which tests will be executed')
- string(name: 'URL', defaultValue: 'http://localhost:8081', description: 'This is url where the application is running')
+ string(name: 'URL', defaultValue: 'http://localhost:8082', description: 'This is url where the application is running')
  booleanParam(name: 'ACCEPTANCE_TESTS', defaultValue: true, description: 'Check to run the acceptance tests')
  booleanParam(name: 'PRODUCTION_CHECKOUT', defaultValue: false, description: 'Check to run the production checkout tests')
  }  
