@@ -24,7 +24,7 @@ stages {
 	      	expression {params.ACCEPTANCE_TESTS == true}
 	      }
 	      steps {
-	      	sh 'docker run --name sbexample_acceptance -d -p 2222:2222 -p 8082:8080 tanmaydeshmukh1/${params.IMAGE_NAME}'
+	      	sh "docker run --name sbexample_acceptance -d -p 2222:2222 -p 8082:8080 tanmaydeshmukh1/${params.IMAGE_NAME}"
 	      }
 	    }
 	    stage('Wait for Acceptance Container to load') {
